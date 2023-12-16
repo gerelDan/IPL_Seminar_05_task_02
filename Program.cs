@@ -24,5 +24,19 @@ void PrintArray(int[,] arr)
         Console.WriteLine();
     }
 }
+void Exchange(int[,] arr)
+{
+    int temp = 0;
+    for (int i = 0; i < arr.GetLength(1); i++)
+    {
+        temp = arr[0, i];
+        arr[0, i] = arr[arr.GetLength(0)-1, i];
+        arr[arr.GetLength(0)-1, i] = temp;
+    }
+}
+
 int [,] arr = FillArray(5, 5, 0, 10);
+PrintArray(arr);
+Exchange(arr);
+Console.WriteLine();
 PrintArray(arr);
